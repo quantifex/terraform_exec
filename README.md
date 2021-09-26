@@ -22,7 +22,8 @@ docker push quantifex/terraform_exec:latest
 docker run --rm -it terraform_exec bash
 ```
 
-### Execute terraform apply
+### Execute terraform plan/apply
 ```bash
-
+docker run -v $(pwd):/home terraform_exec plan -var-file=test.tfvars -out=test.tfplan
+docker run -v $(pwd):/home terraform_exec apply test.tfplan
 ```

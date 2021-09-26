@@ -12,3 +12,4 @@ RUN apt-get install -y terraform && \
     terraform -install-autocomplete
 
 WORKDIR /home
+ENTRYPOINT [ "terraform" ]
